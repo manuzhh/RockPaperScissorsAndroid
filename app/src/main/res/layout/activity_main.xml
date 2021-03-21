@@ -18,28 +18,33 @@
     <Button
         android:id="@+id/rock"
         android:layout_width="0dp"
-        android:layout_weight=".33"
         android:layout_height="120dp"
+        android:layout_weight=".33"
         android:text="Rock"
+        app:layout_constraintEnd_toStartOf="@+id/paper"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <Button
         android:id="@+id/paper"
         android:layout_width="0dp"
-        android:layout_weight=".33"
         android:layout_height="120dp"
+        android:layout_weight=".33"
         android:text="Paper"
+        app:layout_constraintEnd_toStartOf="@+id/scissors"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/rock"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <Button
         android:id="@+id/scissors"
         android:layout_width="0dp"
-        android:layout_weight=".33"
         android:layout_height="120dp"
+        android:layout_weight=".33"
         android:text="Scissors"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/paper"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
@@ -48,7 +53,19 @@
         android:layout_width="wrap_content"
         android:layout_height="120dp"
         android:text=""
+        android:freezesText="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/paper" />
+
+    <TextView
+        android:id="@+id/score_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:freezesText="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/result_text" />
 </androidx.constraintlayout.widget.ConstraintLayout>

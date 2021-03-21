@@ -2,8 +2,10 @@ package com.tallence.tallencegame
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.tallence.tallencegame.model.GameObject
+import com.tallence.tallencegame.model.GameState
+import com.tallence.tallencegame.view.TextComposer
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlin.random.Random
 
 
 class MainActivity : AppCompatActivity() {
@@ -12,19 +14,25 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         rock.setOnClickListener {
-            if (Random.nextInt(1, 3) == 1) result_text.text = "Computer chose rock. It's a draw."
-            if (Random.nextInt(1, 3) == 2) result_text.text = "Computer chose paper. You lose!"
-            if (Random.nextInt(1, 3) == 3) result_text.text = "Computer chose scissors. You win!"
+            val oppObj = GameObject.generateRandom()
+            val gameResult = GameObject.play(GameObject.ROCK, oppObj)
+            GameState.updateScore(gameResult)
+            result_text.text = TextComposer.composeResultText(oppObj, gameResult)
+            score_text.text = TextComposer.composeScoreText()
         }
         paper.setOnClickListener {
-            if (Random.nextInt(1, 3) == 1) result_text.text = "Computer chose rock. You win!"
-            if (Random.nextInt(1, 3) == 2) result_text.text = "Computer chose paper. It's a draw."
-            if (Random.nextInt(1, 3) == 3) result_text.text = "Computer chose scissors. You lose!"
+            val oppObj = GameObject.generateRandom()
+            val gameResult = GameObject.play(GameObject.PAPER, oppObj)
+            GameState.updateScore(gameResult)
+            result_text.text = TextComposer.composeResultText(oppObj, gameResult)
+            score_text.text = TextComposer.composeScoreText()
         }
         scissors.setOnClickListener {
-            if (Random.nextInt(1, 3) == 1) result_text.text = "Computer chose rock. You lose."
-            if (Random.nextInt(1, 3) == 2) result_text.text = "Computer chose paper. You win!"
-            if (Random.nextInt(1, 3) == 3) result_text.text = "Computer chose scissors. It's a draw."
+            val oppObj = GameObject.generateRandom()
+            val gameResult = GameObject.play(GameObject.SCISSORS, oppObj)
+            GameState.updateScore(gameResult)
+            result_text.text = TextComposer.composeResultText(oppObj, gameResult)
+            score_text.text = TextComposer.composeScoreText()
         }
     }
 }
