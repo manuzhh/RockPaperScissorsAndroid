@@ -1,9 +1,5 @@
 package com.tallence.tallencegame.model
 
-import com.tallence.tallencegame.model.GameObject
-import com.tallence.tallencegame.model.GameResult
-import com.tallence.tallencegame.model.GameState
-
 class TextComposer {
     companion object {
         fun composeResultText (oppObj: GameObject, gameResult: GameResult): String {
