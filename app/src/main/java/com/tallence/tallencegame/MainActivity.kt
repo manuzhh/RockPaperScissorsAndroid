@@ -4,7 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.tallence.tallencegame.model.GameObject
 import com.tallence.tallencegame.model.GameState
-import com.tallence.tallencegame.view.TextComposer
+import com.tallence.tallencegame.model.TextComposer
 import kotlinx.android.synthetic.main.activity_main.*
 
 

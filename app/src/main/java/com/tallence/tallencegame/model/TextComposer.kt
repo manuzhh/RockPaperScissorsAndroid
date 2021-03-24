@@ -1,4 +1,4 @@
-package com.tallence.tallencegame.view
+package com.tallence.tallencegame.model
 
 import com.tallence.tallencegame.model.GameObject
 import com.tallence.tallencegame.model.GameResult
